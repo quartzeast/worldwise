@@ -1,3 +1,4 @@
+import { Outlet } from 'react-router'
 import AppNav from './AppNav'
 import Logo from './Logo'
 import styles from './Sidebar.module.css'
@@ -7,6 +8,8 @@ function Sidebar() {
     <div className={styles.sidebar}>
       <Logo />
       <AppNav />
+
+      <Outlet />
 
       <footer className={styles.footer}>
         <p className={styles.copyright}>
@@ -18,3 +21,5 @@ function Sidebar() {
 }
 
 export default Sidebar
+
+// Outlet 决定了嵌套路由组件的渲染位置

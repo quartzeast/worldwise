@@ -12,13 +12,20 @@ function App() {
     // 当 URL 匹配 Route 组件的 path 时，Route 组件会渲染它的 element 属性（React 组件）
     // BrowserRouter 组件并不会渲染任何内容，它只是一个容器，用于包裹所有的路由组件
     // 匹配的组件被渲染到 BrowserRouter 组件所在的位置，App 组件的其他部分会在所有 URL 中保持不变
+    // 嵌套路由：路径决定了大组件内部渲染的子组件
+    // 索引路由：决定默认情况下渲染的组件
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route index element={<Homepage />} />
         <Route path="product" element={<Product />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="login" element={<Login />} />
-        <Route path="app" element={<AppLayout />} />
+        <Route path="app" element={<AppLayout />}>
+          <Route index element={<p>List of Cities</p>} />
+          <Route path="cities" element={<p>List of Cities</p>} />
+          <Route path="countries" element={<p>List of Countries</p>} />
+          <Route path="form" element={<p>Form</p>} />
+        </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
