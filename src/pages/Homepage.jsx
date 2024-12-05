@@ -1,4 +1,4 @@
-import { Link } from 'react-router'
+import { NavLink } from 'react-router'
 import PageNav from '../components/PageNav'
 
 function Homepage() {
@@ -8,7 +8,7 @@ function Homepage() {
 
       <h1>Worldwise</h1>
 
-      <Link to="/pricing">Pricing</Link>
+      <NavLink to="/pricing">Pricing</NavLink>
     </div>
   )
 }
