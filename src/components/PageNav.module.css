@@ -1,0 +1,24 @@
+.nav {
+  background-color: orangered;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+/* :global 伪类可以用来定义全局 CSS */
+:global(.test) {
+  background-color: red;
+}
+
+/* global 关键字可以保留原始类名，这样就不会在 active 后加上随机后缀 */
+.nav :global(.active) {
+  background-color: green;
+}
+
+/* global 适合场景：当我们使用来自外部源的类名时，active 这个类名是 React Router
+   自动添加的，如何想用它添加样式，则要使用 global 来保留原始类名
+   相反，如果我们只是想定义一些全局类，我们就不会在 css 模块中定义，而是直接在全局 css 文件中定义（index.css）
+*/
