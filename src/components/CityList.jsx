@@ -1,9 +1,9 @@
-import Spinner from './Spinner'
-import Message from './Message'
 import PropTypes from 'prop-types'
+import CityItem from './CityItem'
+import Message from './Message'
+import Spinner from './Spinner'
 
 import styles from './CityList.module.css'
-import CityItem from './CityItem'
 
 function CityList({ cities, isLoading }) {
   if (isLoading) return <Spinner />
